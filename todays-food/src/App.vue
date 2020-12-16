@@ -1,17 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <router-link to="/signup">Sign-up</router-link> |
+      <router-link to="/login">Log-in</router-link>
+    </div>
+    <router-view @login="login = true"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
+  data() {
+    return {
+      login: false
+    }
+  },
   components: {
-    HelloWorld
+
+  },
+  methods: {
+    logout() {
+      this.login = false
+      localStorage.removeItem('jwt')
+      this.$router.push({ name: 'Login' })
+    }
+  },
+  created() {
+    const token = localStorage.getItem('jwt')
+ 
+    if (token) {
+      this.login = true
+    }
   }
 }
 </script>
