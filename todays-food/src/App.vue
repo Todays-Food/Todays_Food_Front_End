@@ -2,7 +2,8 @@
   <div id="app">
     <div>
       <router-link to="/signup">Sign-up</router-link> |
-      <router-link to="/login">Log-in</router-link>
+      <router-link to="/login">Log-in</router-link> |
+      <router-link to="#">Log-out</router-link>
     </div>
     <router-view @login="login = true"/>
   </div>
