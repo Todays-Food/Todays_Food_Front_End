@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from '@/views/Home'
 import Signup from '@/views/accounts/Signup'
 import Login from '@/views/accounts/Login'
+import CommunityList from '@/views/community/CommunityList'
+import CommunityCreate from '@/views/community/CommunityCreate'
 
 // import PostList from '@/views/community/PostList'
 // import CreatePost from '@/views/community/CreatePost'
@@ -12,11 +13,6 @@ import Login from '@/views/accounts/Login'
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home,
-  },
   {
     path: '/signup',
     name: 'Signup',
@@ -27,6 +23,16 @@ const routes = [
     name: 'Login',
     component: Login
   },
+  {
+    path: '/community',
+    name: 'CommunityList',
+    component: CommunityList
+  },
+  {
+    path: '/create',
+    name: 'CommunityCreate',
+    component: CommunityCreate
+  }
   // {
   //   path: '/PostList',
   //   name: 'PostList',

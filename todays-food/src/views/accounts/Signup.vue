@@ -42,7 +42,6 @@ export default {
         password,
         passwordConfirmation,
       }
-
       if (password === passwordConfirmation) {
         axios.post('http://127.0.0.1:8000/accounts/signup/', userData)
           .then(() => {
