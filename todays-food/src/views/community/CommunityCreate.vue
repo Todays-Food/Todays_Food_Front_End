@@ -10,16 +10,16 @@
 <script>
 import axios from 'axios'
 
-const SERVER_URL = process.env.VUE_APP_SERVER_URL
+// const SERVER_URL = process.env.VUE_APP_SERVER_URL
 
 export default {
   name: 'CommunityCreate',
   data: function () {
     return {
       title: '',
-      // content: '',
-      // created_at: '',
-      // updated_at: ''
+      content: '',
+      created_at: '',
+      updated_at: ''
     }
   },
   methods: {
@@ -36,10 +36,13 @@ export default {
       const config = this.setToken()
       const communityData = {
         title: this.title,
-        // content: this.content
+        content: this.content,
+        created_at: this.created_at,
+        updated_at: this.updated_at,
       }
       if (communityData.title) {
-        axios.post(`${SERVER_URL}/community/`, communityData, config)
+        // axios.post(`${SERVER_URL}/community/`, communityData, config)
+        axios.post(`http://127.0.0.1:8000/community/`, communityData, config)
           .then(() => {
             this.$router.push({ name: 'CommunityList' })
             console.log(11111)

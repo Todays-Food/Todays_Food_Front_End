@@ -29,7 +29,7 @@ const routes = [
     component: CommunityList
   },
   {
-    path: '/create',
+    path: '/community/create',
     name: 'CommunityCreate',
     component: CommunityCreate
   }
