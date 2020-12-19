@@ -1,16 +1,20 @@
 <template>
   <div>
     <h1>Community Create</h1>
-    <input type="text" v-model.trim="title" @keypress.enter="communityCreate">
-    <!-- <input type="text" v-model.trim="content" @keypress.enter="communityCreate"> -->
-    <button @click="communityCreate">+</button>
+    <ul>
+      <label class="title-label" for="title">제목 : </label>
+      <input type="text" v-model.trim="title" @keypress.enter="communityCreate"><br/>
+      <label class="content-label" for="content">내용 : </label>
+      <input type="text" v-model.trim="content" @keypress.enter="communityCreate">
+      <button @click="communityCreate">+</button>
+    </ul>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 
-// const SERVER_URL = process.env.VUE_APP_SERVER_URL
+const SERVER_URL = process.env.VUE_APP_SERVER_URL
 
 export default {
   name: 'CommunityCreate',
@@ -41,8 +45,8 @@ export default {
         updated_at: this.updated_at,
       }
       if (communityData.title) {
-        // axios.post(`${SERVER_URL}/community/`, communityData, config)
-        axios.post(`http://127.0.0.1:8000/community/`, communityData, config)
+        axios.post(`${SERVER_URL}/community/`, communityData, config)
+        // axios.post(`http://127.0.0.1:8000/community/`, communityData, config)
           .then(() => {
             this.$router.push({ name: 'CommunityList' })
             console.log(11111)
