@@ -7,6 +7,7 @@
       
       <router-link :to="{ name: 'CommunityList' }">CommunityList</router-link> | 
       <router-link :to="{ name: 'CommunityCreate' }">CommunityCreate</router-link> | 
+      <router-link :to="{ name: 'CommunityDetail' }">CommunityDetail</router-link> | 
       <!-- <router-link to="community_create">CommunityCreate</router-link> -->
     </div>
     <router-view @login="login = true"/>

@@ -5,6 +5,7 @@ import Signup from '@/views/accounts/Signup'
 import Login from '@/views/accounts/Login'
 import CommunityList from '@/views/community/CommunityList'
 import CommunityCreate from '@/views/community/CommunityCreate'
+import CommunityDetail from '@/views/community/CommunityDetail'
 
 // import PostList from '@/views/community/PostList'
 // import CreatePost from '@/views/community/CreatePost'
@@ -29,9 +30,14 @@ const routes = [
     component: CommunityList
   },
   {
-    path: '/community/create',
+    path: '/community/create/:id?',
     name: 'CommunityCreate',
     component: CommunityCreate
+  },
+  {
+    path: '/community/detail/:id?',
+    name: 'CommunityDetail',
+    component: CommunityDetail
   }
   // {
   //   path: '/PostList',
