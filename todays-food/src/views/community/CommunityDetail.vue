@@ -105,7 +105,7 @@ export default {
     },
     getComment: function() {
       const config = this.setToken()
-      axios.get(`${SERVER_URL}/community/comments/`, config)
+      axios.get(`${SERVER_URL}/community/${this.id}/comments/`, config)
         .then((res) => {
           console.log(res)
           this.comments = res.data
@@ -122,7 +122,7 @@ export default {
       console.log(reviewId)
       console.log(commentId)
 
-      axios.delete(`${SERVER_URL}/community/comments/${reviewId}/`, config)
+      axios.delete(`${SERVER_URL}/community/${commentId}/comments/${reviewId}/`, config)
         .then(() => {
           this.getComment()
         })

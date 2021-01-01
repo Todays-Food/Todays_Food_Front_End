@@ -20,16 +20,16 @@ const SERVER_URL = process.env.VUE_APP_SERVER_URL
 
 export default {
   name: 'CommunityCreate',
-  data: function () {
+  data() {
     const index = this.$route.params.id;
     return {
       index: index,
       title: index !== undefined ? this.$route.query.title : '',
       content: index !== undefined ? this.$route.query.content : '',
-      user_id: '',
+      // user_id: '',
       created_at: '',
       updated_at: '',
-      id: this.$route.query.id,
+      // id: this.$route.query.id,
     }
   },
   methods: {
@@ -48,12 +48,12 @@ export default {
     communityCreate: function () {
       const config = this.setToken()
       const communityData = {
-        content_id: this.id,
+        // content_id: this.id,
         title: this.title,
         content: this.content,
         created_at: this.created_at,
         updated_at: this.updated_at,
-        user_id: this.user_id,
+        // user_id: this.user_id,
       }
       if (communityData.title) {
         axios.post(`${SERVER_URL}/community/`, communityData, config)
@@ -65,6 +65,7 @@ export default {
             console.log(err)
             console.log('222')
             console.log(communityData)
+            console.log(this.index)
           })
       }
     },
