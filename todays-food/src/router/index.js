@@ -6,10 +6,8 @@ import Login from '@/views/accounts/Login'
 import CommunityList from '@/views/community/CommunityList'
 import CommunityCreate from '@/views/community/CommunityCreate'
 import CommunityDetail from '@/views/community/CommunityDetail'
+import Search from '@/views/restaurants/Search'
 
-// import PostList from '@/views/community/PostList'
-// import CreatePost from '@/views/community/CreatePost'
-// import Detail from '@/views/community/Detail'
 
 Vue.use(VueRouter)
 
@@ -38,7 +36,12 @@ const routes = [
     path: '/community/detail/:id?',
     name: 'CommunityDetail',
     component: CommunityDetail
-  }
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: Search,
+  },
   // {
   //   path: '/PostList',
   //   name: 'PostList',
