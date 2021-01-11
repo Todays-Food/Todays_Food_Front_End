@@ -30,6 +30,7 @@ export default {
       created_at: '',
       updated_at: '',
       id: this.$route.query.id,
+      like_users: this.$route.query.like_users,
     }
   },
   methods: {
@@ -54,11 +55,13 @@ export default {
         created_at: this.created_at,
         updated_at: this.updated_at,
         user_id: this.user_id,
+        like_users: this.like_users,
       }
       if (communityData.title) {
         axios.post(`${SERVER_URL}/community/`, communityData, config)
           .then((res) => {
             console.log(res)
+            console.log(this.user_id)
             this.$router.push({ name: 'CommunityList' })
           })
           .catch((err) => {
